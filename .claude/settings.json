@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Edit(./tasks/data/domain.md)",
+      "Edit(./tasks/data/schema.sql)",
+      "Edit(./tasks/data/seed.json)",
+      "Edit(./tasks/data/seed.sqlite)",
+      "Edit(./tasks/data/expected-seed-results.json)"
+    ]
+  }
+}
