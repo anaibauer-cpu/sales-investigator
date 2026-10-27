@@ -1,9 +1,20 @@
 # Business Data Investigator: project instructions
 
-## Current phase: DATA PREPARATION ONLY
-- Do not create application code (no `app/`, query tool, model integration, UI) until the owner explicitly starts the next phase.
-- Before creating or changing any file, show a plan and wait for approval.
-- Do not run live model/API calls in this phase.
+## Current phase: APPLICATION, step 1 (read-only query tool)
+- Data preparation is finished (see git history). Do not modify `data/`, the dataset scripts in `scripts/`, or `tasks/data/` unless the owner asks.
+- Build only what the owner asks for in the current step. Current step: `app/query_tool.py` and its tests. Do not add model integration, API calls, a web server or UI yet.
+- Show a plan before creating or changing files and wait for approval.
+- No live model/API calls until the owner explicitly allows them.
+- Do not run `git commit`; the owner commits.
+
+## Application rules
+- Python with the standard library where possible. Any dependency goes into `requirements.txt` and is reported to the owner.
+- Layout: application code in `app/`, tests in `tests/`, settings in `config/`.
+- The query tool reads `data/dataset.sqlite`. Safety must come from SQLite itself (read-only connection, `query_only`, authorizer limited to the three tables), not from keyword filtering of SQL text.
+- Limits: at most 6 attempts per question (errors, rejected statements and retries all count), a query time limit and a result-row cap. Values live in `config/limits.json`.
+- Every attempt is logged (question id, SQL, status, result or error, timing). Logs are never written into the business database.
+- Tests never modify `data/dataset.sqlite`; they use a temporary copy.
+- Later steps: model output is labelled live / cached / simulated.
 
 ## Source of truth (read in this order)
 1. `tasks/data/domain.md` (fixed fictional rules; wins on any conflict)
