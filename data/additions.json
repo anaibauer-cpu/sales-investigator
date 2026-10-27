@@ -1,0 +1,58 @@
+{
+  "label": "simulated",
+  "description": "Handwritten fictional rows added to the seed for fixture preparation. Not real business data.",
+  "generation": "Handwritten fixed list. No randomness, so no random seed.",
+  "months_used": ["2026-06", "2026-07", "2026-10"],
+  "constraints": [
+    "Seed rows (C1-C2, O1-O4, RF1-RF3) are not changed (decision A1).",
+    "No new rows dated August or September 2026 (decision A1).",
+    "No new refunds on seed orders O1-O4 (decision A12).",
+    "Only segments small and large (A2).",
+    "No zero amounts (A4), no refund before its order (A5), total refunds per order <= order amount (A6)."
+  ],
+  "customers": [
+    {"customer_id": "C3", "segment": "small", "note": "new customer"},
+    {"customer_id": "C4", "segment": "large", "note": "new customer; R5 (O16)"},
+    {"customer_id": "C5", "segment": "small", "note": "new customer; R5 (O17)"},
+    {"customer_id": "C6", "segment": "large", "note": "new customer; O8 with two refunds"},
+    {"customer_id": "C7", "segment": "small", "note": "new customer; full refund (O24)"},
+    {"customer_id": "C8", "segment": "large", "note": "new customer"},
+    {"customer_id": "C9", "segment": "small", "note": "new customer; July end boundary (O19)"},
+    {"customer_id": "C10", "segment": "large", "note": "new customer"}
+  ],
+  "orders": [
+    {"order_id": "O5", "customer_id": "C3", "order_date": "2026-06-03", "amount_cents": 1420, "note": "June filler"},
+    {"order_id": "O6", "customer_id": "C4", "order_date": "2026-06-08", "amount_cents": 2380, "note": "June filler"},
+    {"order_id": "O7", "customer_id": "C5", "order_date": "2026-06-12", "amount_cents": 870, "note": "June filler"},
+    {"order_id": "O8", "customer_id": "C6", "order_date": "2026-06-15", "amount_cents": 2960, "note": "R2 supplementary: two refunds in two months (RF7 June, RF8 July)"},
+    {"order_id": "O9", "customer_id": "C1", "order_date": "2026-06-19", "amount_cents": 1135, "note": "new order for seed customer C1"},
+    {"order_id": "O10", "customer_id": "C8", "order_date": "2026-06-24", "amount_cents": 2240, "note": "June filler"},
+    {"order_id": "O11", "customer_id": "C7", "order_date": "2026-06-30", "amount_cents": 640, "note": "last day of June"},
+    {"order_id": "O12", "customer_id": "C2", "order_date": "2026-07-02", "amount_cents": 1980, "note": "new order for seed customer C2"},
+    {"order_id": "O13", "customer_id": "C9", "order_date": "2026-07-06", "amount_cents": 735, "note": "July filler"},
+    {"order_id": "O14", "customer_id": "C10", "order_date": "2026-07-11", "amount_cents": 2310, "note": "July filler"},
+    {"order_id": "O15", "customer_id": "C3", "order_date": "2026-07-14", "amount_cents": 540, "note": "July filler"},
+    {"order_id": "O16", "customer_id": "C4", "order_date": "2026-07-20", "amount_cents": 2875, "note": "R5: refunded in October (RF4), large segment"},
+    {"order_id": "O17", "customer_id": "C5", "order_date": "2026-07-23", "amount_cents": 1240, "note": "R5: refunded on 2026-10-01 (RF5), small segment"},
+    {"order_id": "O18", "customer_id": "C6", "order_date": "2026-07-27", "amount_cents": 1530, "note": "July filler"},
+    {"order_id": "O19", "customer_id": "C9", "order_date": "2026-07-31", "amount_cents": 1065, "note": "R4 supplementary: last day of July, excluded from August"},
+    {"order_id": "O20", "customer_id": "C1", "order_date": "2026-10-01", "amount_cents": 1120, "note": "R4: dated exactly 2026-10-01; seed customer C1"},
+    {"order_id": "O21", "customer_id": "C2", "order_date": "2026-10-01", "amount_cents": 1890, "note": "R4: dated exactly 2026-10-01; seed customer C2"},
+    {"order_id": "O22", "customer_id": "C3", "order_date": "2026-10-04", "amount_cents": 580, "note": "October filler"},
+    {"order_id": "O23", "customer_id": "C4", "order_date": "2026-10-07", "amount_cents": 2145, "note": "October filler"},
+    {"order_id": "O24", "customer_id": "C7", "order_date": "2026-10-09", "amount_cents": 760, "note": "fully refunded by RF6 (refund equals amount)"},
+    {"order_id": "O25", "customer_id": "C8", "order_date": "2026-10-13", "amount_cents": 1675, "note": "October filler"},
+    {"order_id": "O26", "customer_id": "C10", "order_date": "2026-10-16", "amount_cents": 1310, "note": "October filler"},
+    {"order_id": "O27", "customer_id": "C5", "order_date": "2026-10-19", "amount_cents": 940, "note": "October filler"},
+    {"order_id": "O28", "customer_id": "C6", "order_date": "2026-10-22", "amount_cents": 1205, "note": "October filler"},
+    {"order_id": "O29", "customer_id": "C9", "order_date": "2026-10-24", "amount_cents": 690, "note": "October filler"},
+    {"order_id": "O30", "customer_id": "C7", "order_date": "2026-10-27", "amount_cents": 485, "note": "latest row; October is a partial month (Q7)"}
+  ],
+  "refunds": [
+    {"refund_id": "RF4", "order_id": "O16", "refund_date": "2026-10-14", "amount_cents": 630, "note": "R5: July order refunded in October, large"},
+    {"refund_id": "RF5", "order_id": "O17", "refund_date": "2026-10-01", "amount_cents": 365, "note": "R4 boundary refund and R5: July order refunded in October, small"},
+    {"refund_id": "RF6", "order_id": "O24", "refund_date": "2026-10-16", "amount_cents": 760, "note": "refund equals order amount (the <= edge)"},
+    {"refund_id": "RF7", "order_id": "O8", "refund_date": "2026-06-25", "amount_cents": 605, "note": "first of two refunds on O8 (June)"},
+    {"refund_id": "RF8", "order_id": "O8", "refund_date": "2026-07-09", "amount_cents": 450, "note": "second of two refunds on O8 (July); O8 total 1055 <= 2960"}
+  ]
+}

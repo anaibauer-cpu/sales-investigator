@@ -1,0 +1,36 @@
+{
+  "label": "deliberate_invalid",
+  "warning": "Deliberately invalid examples. Used only to test scripts/validate_dataset.py. Never load into data/dataset.sqlite or data/dataset.json.",
+  "cases": [
+    {
+      "case_id": "DI1",
+      "label": "deliberate_invalid",
+      "expected_error": "refund_exceeds_order",
+      "description": "Two refunds on one order total 1100 cents against an order of 1000 cents.",
+      "customers": [{"customer_id": "XC1", "segment": "small"}],
+      "orders": [{"order_id": "XO1", "customer_id": "XC1", "order_date": "2026-06-10", "amount_cents": 1000}],
+      "refunds": [
+        {"refund_id": "XR1", "order_id": "XO1", "refund_date": "2026-06-15", "amount_cents": 700},
+        {"refund_id": "XR2", "order_id": "XO1", "refund_date": "2026-06-20", "amount_cents": 400}
+      ]
+    },
+    {
+      "case_id": "DI2",
+      "label": "deliberate_invalid",
+      "expected_error": "unknown_segment",
+      "description": "Customer segment is 'medium'; only 'small' and 'large' exist.",
+      "customers": [{"customer_id": "XC2", "segment": "medium"}],
+      "orders": [{"order_id": "XO2", "customer_id": "XC2", "order_date": "2026-07-10", "amount_cents": 1500}],
+      "refunds": []
+    },
+    {
+      "case_id": "DI3",
+      "label": "deliberate_invalid",
+      "expected_error": "bad_date",
+      "description": "Order date 2026-02-30 matches the YYYY-MM-DD pattern but is not a calendar date.",
+      "customers": [{"customer_id": "XC3", "segment": "large"}],
+      "orders": [{"order_id": "XO3", "customer_id": "XC3", "order_date": "2026-02-30", "amount_cents": 2000}],
+      "refunds": []
+    }
+  ]
+}

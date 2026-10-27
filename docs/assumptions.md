@@ -20,7 +20,10 @@ Verified facts (checked by recomputation, not assumed):
 | A8 | Direction of net change | Later period minus earlier period (consistent with the supplied -2000). |
 | A9 | Periods | Reference cases use calendar months with half-open boundaries. The application may accept other periods; reference cases do not cover them. |
 | A10 | Segments with no activity | Shown with zeros in a breakdown instead of being omitted (as `large` refunds = 0 in the supplied expectation). |
-| A11 | Negative net | A segment or period can have negative net when refunds exceed gross for that period. It is reported as computed, not corrected. |
+| A11 | Negative net | A segment or period can have negative net when refunds exceed gross for that period. It is reported as computed, not corrected. Not exercised by the current fixtures (see `data/README.md`). |
+| A12 | Refunds on seed orders | No new refunds are added to seed orders O1-O4, so the refund history of seed orders stays exactly as supplied. The validator checks this. |
+| A13 | New orders for seed customers | New orders for seed customers C1 and C2 are allowed in other months (O9, O12, O20, O21). This adds rows and changes no seed row or relationship. |
+| A14 | Simulated label | The `simulated` label and row provenance live in `data/additions.json`, `data/dataset.json` (`meta`) and `data/README.md`, not in the database, which keeps only the three schema tables. |
 
 ## Open ambiguities (not resolved by the rules)
 
@@ -32,6 +35,10 @@ Verified facts (checked by recomputation, not assumed):
 | Q4 | Whether more than two periods or non-calendar periods should be compared. | Reference cases cover only calendar months. |
 | Q5 | Whether an over-refunded order should ever be allowed and how it would be counted. | A6 keeps such rows out of the main data. |
 | Q6 | The records contain no refund reasons. Any explanation of customer behaviour is unsupported. | The report must list this as missing evidence. |
+| Q7 | October 2026 is a partial month: the latest row is dated 2026-10-27, while the calendar-month period runs to 2026-11-01. The rules do not say whether a partial period may be compared with full ones. | Comparing October with full months may mislead. Reports must state the date ranges they use. |
 
 ## Deliberately invalid or simulated data
-None yet. Anything added later must be listed here with its file name and label.
+| File | Label | Content |
+|------|-------|---------|
+| `data/additions.json` (merged into `data/dataset.json` / `data/dataset.sqlite`) | `simulated` | Handwritten fictional rows C3-C10, O5-O30, RF4-RF8, dated June, July and October 2026. No randomness. |
+| `data/deliberate_invalid.json` | `deliberate_invalid` | DI1 over-refunded order, DI2 unknown segment `medium`, DI3 bad date `2026-02-30`. Used only to test `scripts/validate_dataset.py`; never loaded into the main dataset. |

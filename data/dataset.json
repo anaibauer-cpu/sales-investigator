@@ -1,0 +1,355 @@
+{
+  "meta": {
+    "description": "Expanded fixture dataset: original seed rows plus handwritten simulated rows.",
+    "generated_by": "scripts/build_dataset.py",
+    "generation_method": "Handwritten fixed list in data/additions.json merged after tasks/data/seed.json.",
+    "random_seed": null,
+    "randomness": "none",
+    "seed_ids": {
+      "customers": [
+        "C1",
+        "C2"
+      ],
+      "orders": [
+        "O1",
+        "O2",
+        "O3",
+        "O4"
+      ],
+      "refunds": [
+        "RF1",
+        "RF2",
+        "RF3"
+      ]
+    },
+    "simulated_ids": {
+      "customers": [
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "orders": [
+        "O5",
+        "O6",
+        "O7",
+        "O8",
+        "O9",
+        "O10",
+        "O11",
+        "O12",
+        "O13",
+        "O14",
+        "O15",
+        "O16",
+        "O17",
+        "O18",
+        "O19",
+        "O20",
+        "O21",
+        "O22",
+        "O23",
+        "O24",
+        "O25",
+        "O26",
+        "O27",
+        "O28",
+        "O29",
+        "O30"
+      ],
+      "refunds": [
+        "RF4",
+        "RF5",
+        "RF6",
+        "RF7",
+        "RF8"
+      ]
+    },
+    "simulated_label": "simulated",
+    "source_sha256": {
+      "domain.md": "f8e2016e50a1b3ae90ceafc8328557fdfb1ca4f5e667fea7587075b48df1e6f8",
+      "expected-seed-results.json": "f0ea3f929c01a0ca3ab6fdd8fa9d68ac93409056d90415fe3c4f39cac345481e",
+      "schema.sql": "0d23aa21c10d9168f60ba70eeec8b3042533fb083c510c2159499e05b3322742",
+      "seed.json": "95d890aad4b3fdf74429871e091113dfde56a6f49826756cbdb0592773104fdd",
+      "seed.sqlite": "0bf01327fed81b4f058197cf745dd0440cd10587f3d2c6e2bb6bfe4ba45ed596"
+    }
+  },
+  "customers": [
+    {
+      "customer_id": "C1",
+      "segment": "small"
+    },
+    {
+      "customer_id": "C2",
+      "segment": "large"
+    },
+    {
+      "customer_id": "C3",
+      "segment": "small"
+    },
+    {
+      "customer_id": "C4",
+      "segment": "large"
+    },
+    {
+      "customer_id": "C5",
+      "segment": "small"
+    },
+    {
+      "customer_id": "C6",
+      "segment": "large"
+    },
+    {
+      "customer_id": "C7",
+      "segment": "small"
+    },
+    {
+      "customer_id": "C8",
+      "segment": "large"
+    },
+    {
+      "customer_id": "C9",
+      "segment": "small"
+    },
+    {
+      "customer_id": "C10",
+      "segment": "large"
+    }
+  ],
+  "orders": [
+    {
+      "order_id": "O1",
+      "customer_id": "C1",
+      "order_date": "2026-08-05",
+      "amount_cents": 5000
+    },
+    {
+      "order_id": "O2",
+      "customer_id": "C2",
+      "order_date": "2026-08-10",
+      "amount_cents": 5000
+    },
+    {
+      "order_id": "O3",
+      "customer_id": "C1",
+      "order_date": "2026-09-05",
+      "amount_cents": 5000
+    },
+    {
+      "order_id": "O4",
+      "customer_id": "C2",
+      "order_date": "2026-09-10",
+      "amount_cents": 5000
+    },
+    {
+      "order_id": "O5",
+      "customer_id": "C3",
+      "order_date": "2026-06-03",
+      "amount_cents": 1420
+    },
+    {
+      "order_id": "O6",
+      "customer_id": "C4",
+      "order_date": "2026-06-08",
+      "amount_cents": 2380
+    },
+    {
+      "order_id": "O7",
+      "customer_id": "C5",
+      "order_date": "2026-06-12",
+      "amount_cents": 870
+    },
+    {
+      "order_id": "O8",
+      "customer_id": "C6",
+      "order_date": "2026-06-15",
+      "amount_cents": 2960
+    },
+    {
+      "order_id": "O9",
+      "customer_id": "C1",
+      "order_date": "2026-06-19",
+      "amount_cents": 1135
+    },
+    {
+      "order_id": "O10",
+      "customer_id": "C8",
+      "order_date": "2026-06-24",
+      "amount_cents": 2240
+    },
+    {
+      "order_id": "O11",
+      "customer_id": "C7",
+      "order_date": "2026-06-30",
+      "amount_cents": 640
+    },
+    {
+      "order_id": "O12",
+      "customer_id": "C2",
+      "order_date": "2026-07-02",
+      "amount_cents": 1980
+    },
+    {
+      "order_id": "O13",
+      "customer_id": "C9",
+      "order_date": "2026-07-06",
+      "amount_cents": 735
+    },
+    {
+      "order_id": "O14",
+      "customer_id": "C10",
+      "order_date": "2026-07-11",
+      "amount_cents": 2310
+    },
+    {
+      "order_id": "O15",
+      "customer_id": "C3",
+      "order_date": "2026-07-14",
+      "amount_cents": 540
+    },
+    {
+      "order_id": "O16",
+      "customer_id": "C4",
+      "order_date": "2026-07-20",
+      "amount_cents": 2875
+    },
+    {
+      "order_id": "O17",
+      "customer_id": "C5",
+      "order_date": "2026-07-23",
+      "amount_cents": 1240
+    },
+    {
+      "order_id": "O18",
+      "customer_id": "C6",
+      "order_date": "2026-07-27",
+      "amount_cents": 1530
+    },
+    {
+      "order_id": "O19",
+      "customer_id": "C9",
+      "order_date": "2026-07-31",
+      "amount_cents": 1065
+    },
+    {
+      "order_id": "O20",
+      "customer_id": "C1",
+      "order_date": "2026-10-01",
+      "amount_cents": 1120
+    },
+    {
+      "order_id": "O21",
+      "customer_id": "C2",
+      "order_date": "2026-10-01",
+      "amount_cents": 1890
+    },
+    {
+      "order_id": "O22",
+      "customer_id": "C3",
+      "order_date": "2026-10-04",
+      "amount_cents": 580
+    },
+    {
+      "order_id": "O23",
+      "customer_id": "C4",
+      "order_date": "2026-10-07",
+      "amount_cents": 2145
+    },
+    {
+      "order_id": "O24",
+      "customer_id": "C7",
+      "order_date": "2026-10-09",
+      "amount_cents": 760
+    },
+    {
+      "order_id": "O25",
+      "customer_id": "C8",
+      "order_date": "2026-10-13",
+      "amount_cents": 1675
+    },
+    {
+      "order_id": "O26",
+      "customer_id": "C10",
+      "order_date": "2026-10-16",
+      "amount_cents": 1310
+    },
+    {
+      "order_id": "O27",
+      "customer_id": "C5",
+      "order_date": "2026-10-19",
+      "amount_cents": 940
+    },
+    {
+      "order_id": "O28",
+      "customer_id": "C6",
+      "order_date": "2026-10-22",
+      "amount_cents": 1205
+    },
+    {
+      "order_id": "O29",
+      "customer_id": "C9",
+      "order_date": "2026-10-24",
+      "amount_cents": 690
+    },
+    {
+      "order_id": "O30",
+      "customer_id": "C7",
+      "order_date": "2026-10-27",
+      "amount_cents": 485
+    }
+  ],
+  "refunds": [
+    {
+      "refund_id": "RF1",
+      "order_id": "O1",
+      "refund_date": "2026-08-20",
+      "amount_cents": 1000
+    },
+    {
+      "refund_id": "RF2",
+      "order_id": "O3",
+      "refund_date": "2026-09-20",
+      "amount_cents": 2000
+    },
+    {
+      "refund_id": "RF3",
+      "order_id": "O3",
+      "refund_date": "2026-09-21",
+      "amount_cents": 1000
+    },
+    {
+      "refund_id": "RF4",
+      "order_id": "O16",
+      "refund_date": "2026-10-14",
+      "amount_cents": 630
+    },
+    {
+      "refund_id": "RF5",
+      "order_id": "O17",
+      "refund_date": "2026-10-01",
+      "amount_cents": 365
+    },
+    {
+      "refund_id": "RF6",
+      "order_id": "O24",
+      "refund_date": "2026-10-16",
+      "amount_cents": 760
+    },
+    {
+      "refund_id": "RF7",
+      "order_id": "O8",
+      "refund_date": "2026-06-25",
+      "amount_cents": 605
+    },
+    {
+      "refund_id": "RF8",
+      "order_id": "O8",
+      "refund_date": "2026-07-09",
+      "amount_cents": 450
+    }
+  ]
+}
