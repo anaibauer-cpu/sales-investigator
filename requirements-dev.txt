@@ -1,0 +1,2 @@
+# Test-only dependencies. The application (app/) uses the standard library only.
+pytest==9.1.1

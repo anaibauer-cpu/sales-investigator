@@ -1,0 +1,5 @@
+{
+  "max_attempts": 6,
+  "timeout_ms": 2000,
+  "max_rows": 200
+}
